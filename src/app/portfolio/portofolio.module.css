@@ -1,0 +1,51 @@
+.wrapper {
+  margin: 0 -10px;
+}
+
+.desc {
+  background-color: #222;
+  padding: 40px;
+}
+
+.desc h2,
+.desc h6 {
+  color: #fffcc4;
+}
+
+.folio {
+  height: 100vh;
+  align-items: center;
+  margin: 0 !important;
+  padding-bottom: 30px !important;
+}
+
+.folio .desc {
+  height: 100%;
+}
+
+.folio:nth-child(even) {
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    162deg,
+    rgba(68, 68, 68, 1) 44%,
+    rgba(34, 34, 34, 1) 63%
+  );
+}
+
+.folio:nth-child(odd) {
+  /* background-color: #474747; */
+  background: rgb(34, 34, 34);
+  background: linear-gradient(
+    162deg,
+    rgba(34, 34, 34, 1) 50%,
+    rgba(68, 68, 68, 1) 64%
+  );
+}
+
+.folio:nth-child(odd) .desc {
+  border-radius: 0px 20px 20px 0;
+}
+
+.folio:nth-child(even) .desc {
+  border-radius: 20px 0px 0px 20px;
+}

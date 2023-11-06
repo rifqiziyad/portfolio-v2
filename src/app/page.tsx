@@ -3,8 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import "./globals.css";
-import SkillList from "../json/SkillList.json";
+import SkillList from "../assets/json/SkillList.json";
 import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function Home() {
     <div>
       <section className="top-page">
         <h1>
+          Hi i'm{" "}
           <span
             data-aos="zoom-out-left"
             data-aos-delay={200}
@@ -123,7 +126,13 @@ export default function Home() {
             <div>
               {SkillList["Frontend Developer"].map((data, index) => {
                 return (
-                  <a key={index} target="_blank" href={data._href}>
+                  <a
+                    key={index}
+                    target="_blank"
+                    href={data._href}
+                    data-aos="zoom-out-right"
+                    data-aos-delay={index * 50}
+                  >
                     <Image
                       src={data._src}
                       alt={data._alt}
@@ -168,7 +177,13 @@ export default function Home() {
             <div>
               {SkillList["Backend Developer"].map((data, index) => {
                 return (
-                  <a key={index} target="_blank" href={data._href}>
+                  <a
+                    key={index}
+                    target="_blank"
+                    href={data._href}
+                    data-aos="zoom-out-right"
+                    data-aos-delay={index * 50}
+                  >
                     <Image
                       src={data._src}
                       alt={data._alt}
@@ -219,14 +234,20 @@ export default function Home() {
             <div>
               {SkillList["Others"].map((data, index) => {
                 return (
-                  <a key={index} target="_blank" href={data._href}>
+                  <a
+                    key={index}
+                    target="_blank"
+                    href={data._href}
+                    data-aos="zoom-out-right"
+                    data-aos-delay={index * 50}
+                  >
                     <Image
                       src={data._src}
                       alt={data._alt}
                       width={0}
                       height={0}
                       sizes="100vw"
-                      style={{ width: "100%", height: 70 }} //
+                      style={{ width: "100%", height: 70 }}
                     />
                   </a>
                 );
@@ -286,6 +307,9 @@ export default function Home() {
               <img src="./images/workflow/home page.png" alt="ignica" />
             </div>
           </div>
+        </div>
+        <div className="see-more">
+          <Link href={"/portfolio"}>See more</Link>
         </div>
       </section>
       {/* end portfolio */}
@@ -373,55 +397,7 @@ export default function Home() {
         </div>
       </section>
       {/* end work experience */}
-      <section className="social-media" data-aos="fade-up" data-aos-delay={100}>
-        <h1>
-          Social Media &amp; <br />
-          Contact
-        </h1>
-        <div className="wrapper">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/rifqiziyadimtinan/"
-          >
-            <img
-              src="https://www.vectorlogo.zone/logos/linkedin/linkedin-icon.svg"
-              alt="linkedin"
-            />
-            Rifqi Ziyad Imtinan
-          </a>
-          <a target="_blank" href="https://github.com/rifqiziyad">
-            <img
-              src="https://www.vectorlogo.zone/logos/github/github-tile.svg"
-              alt="github"
-            />
-            rifqiziyad
-          </a>
-          <a target="_blank" href="https://www.facebook.com/rifqiziyadimtinan/">
-            <img
-              src="https://www.vectorlogo.zone/logos/facebook/facebook-official.svg"
-              alt="facvebook"
-            />
-            Rifqi Ziyad Imtinan
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/rifqiziyadimtinan/"
-          >
-            <img
-              src="https://www.vectorlogo.zone/logos/instagram/instagram-icon.svg"
-              alt="instagram"
-            />
-            rifqiziyadimtinan
-          </a>
-          <div>
-            <img
-              src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg"
-              alt="gmail"
-            />
-            rifqiimtinan@gmail.com
-          </div>
-        </div>
-      </section>
+      <Footer />
       {/* Loading Component */}
       {/* <div className="loader" id="loader">
         <div className="box-load1" />

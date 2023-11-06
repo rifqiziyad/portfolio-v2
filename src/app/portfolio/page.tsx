@@ -5,13 +5,14 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import styles from "./portofolio.module.css";
+import { useEffect } from "react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import Footer from "@/components/Footer";
 
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
   return (
     <>
       <div className="portfolio">

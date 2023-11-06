@@ -44,8 +44,21 @@
 
 .folio:nth-child(odd) .desc {
   border-radius: 0px 20px 20px 0;
+
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    162deg,
+    rgba(68, 68, 68, 1) 44%,
+    rgba(34, 34, 34, 1) 63%
+  );
 }
 
 .folio:nth-child(even) .desc {
   border-radius: 20px 0px 0px 20px;
+  background: rgb(34, 34, 34);
+  background: linear-gradient(
+    162deg,
+    rgba(34, 34, 34, 1) 50%,
+    rgba(68, 68, 68, 1) 64%
+  );
 }

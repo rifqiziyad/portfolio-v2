@@ -7,6 +7,7 @@ import SkillList from "../assets/json/SkillList.json";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import SeeMoreButton from "@/components/SeeMoreButton";
 
 export default function Home() {
   useEffect(() => {
@@ -309,7 +310,7 @@ export default function Home() {
           </div>
         </div>
         <div className="see-more">
-          <Link href={"/portfolio"}>See more</Link>
+          <SeeMoreButton />
         </div>
       </section>
       {/* end portfolio */}

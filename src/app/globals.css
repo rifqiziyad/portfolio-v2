@@ -30,7 +30,7 @@ a {
 
 a:hover {
   color: var(--secondary-dark-color);
-  border-bottom: var(--secondary-dark-color) solid 1px;
+  /* border-bottom: var(--secondary-dark-color) solid 1px; */
 }
 
 body {

@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import "./globals.css";
 import SkillList from "../assets/json/SkillList.json";
 import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 import SeeMoreButton from "@/components/SeeMoreButton";
+import HumburgerButton from "@/components/HamburgerButton";
 
 export default function Home() {
   useEffect(() => {
@@ -16,7 +16,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
+      <HumburgerButton />
       <section className="top-page">
         <h1>
           Hi i'm{" "}
@@ -55,217 +56,94 @@ export default function Home() {
         </div>
       </section>
       {/* start my skill */}
-      <section
-        className="my-skill"
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-delay={300}
-      >
-        <h1>My Skills</h1>
-        <div className="wrapper">
-          <div className="frontend">
-            <h2>Frontend Development</h2>
-            {/* <div>
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-              >
-                <img
-                  src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg"
-                  alt="html-icon"
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-              >
-                <img
-                  src="https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg"
-                  alt="icon-css"
-                />
-              </a>
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                  alt="js-icon"
-                />
-              </a>
-              <a target="_blank" href="https://react.dev/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg"
-                  alt="react-icon"
-                />
-              </a>
-              <a target="_blank" href="https://nextjs.org/">
-                <img
-                  src="https://static-00.iconduck.com/assets.00/nextjs-icon-512x309-yynfidez.png"
-                  alt="next-icon"
-                />
-              </a>
-              <a target="_blank" href="https://jquery.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/jquery/jquery-vertical.svg"
-                  alt="jquery"
-                />
-              </a>
-              <a target="_blank" href="https://redux.js.org/">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
-                  alt="redux"
-                />
-              </a>
-              <a target="_blank" href="https://getbootstrap.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg"
-                  alt="bootstrap"
-                />
-              </a>
-            </div> */}
-            <div>
-              {SkillList["Frontend Developer"].map((data, index) => {
-                return (
-                  <a
-                    key={index}
-                    target="_blank"
-                    href={data._href}
-                    data-aos="zoom-out-right"
-                    data-aos-delay={index * 50}
-                  >
-                    <Image
-                      src={data._src}
-                      alt={data._alt}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      style={{ width: "100%", height: 70 }} //
-                    />
-                  </a>
-                );
-              })}
+      <section className="my-skill">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay={300}>
+          <h1>My Skills</h1>
+          <div className="wrapper">
+            <div className="frontend">
+              <h2>Frontend Development</h2>
+              <div>
+                {SkillList["Frontend Developer"].map((data, index) => {
+                  return (
+                    <a
+                      key={index}
+                      target="_blank"
+                      href={data._href}
+                      data-aos="zoom-out-right"
+                      data-aos-delay={index * 50}
+                    >
+                      <Image
+                        src={data._src}
+                        alt={data._alt}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: 70 }} //
+                      />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <div className="backend">
-            <h2>Backend Developement</h2>
-            {/* <div>
-              <a target="_blank" href="https://nodejs.org/en">
-                <img
-                  src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg"
-                  alt="node.js"
-                />
-              </a>
-              <a target="_blank" href="https://expressjs.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg"
-                  alt="express.js"
-                />
-              </a>
-              <a target="_blank" href="https://www.mysql.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg"
-                  alt="mysql"
-                />
-              </a>
-              <a target="_blank" href="https://redis.io/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/redis/redis-ar21.svg"
-                  alt="redis"
-                />
-              </a>
-            </div> */}
-            <div>
-              {SkillList["Backend Developer"].map((data, index) => {
-                return (
-                  <a
-                    key={index}
-                    target="_blank"
-                    href={data._href}
-                    data-aos="zoom-out-right"
-                    data-aos-delay={index * 50}
-                  >
-                    <Image
-                      src={data._src}
-                      alt={data._alt}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      style={{ width: "100%", height: 70 }} //
-                    />
-                  </a>
-                );
-              })}
+            <div className="backend">
+              <h2>Backend Developement</h2>
+              <div>
+                {SkillList["Backend Developer"].map((data, index) => {
+                  return (
+                    <a
+                      key={index}
+                      target="_blank"
+                      href={data._href}
+                      data-aos="zoom-out-right"
+                      data-aos-delay={index * 50}
+                    >
+                      <Image
+                        src={data._src}
+                        alt={data._alt}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: 70 }} //
+                      />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <div className="others">
-            <h2>Others</h2>
-            {/* <div>
-              <a target="_blank" href="https://git-scm.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"
-                  alt="git"
-                />
-              </a>
-              <a target="_blank" href="https://www.npmjs.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/npmjs/npmjs-ar21.svg"
-                  alt="npm"
-                />
-              </a>
-              <a target="_blank" href="https://www.postman.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg"
-                  alt="postman"
-                />
-              </a>
-              <a target="_blank" href="https://github.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/github/github-ar21.svg"
-                  alt="github"
-                />
-              </a>
-              <a target="_blank" href="https://about.gitea.com/">
-                <img
-                  src="https://www.vectorlogo.zone/logos/giteaio/giteaio-ar21.svg"
-                  alt="gitea"
-                />
-              </a>
-            </div> */}
-            <div>
-              {SkillList["Others"].map((data, index) => {
-                return (
-                  <a
-                    key={index}
-                    target="_blank"
-                    href={data._href}
-                    data-aos="zoom-out-right"
-                    data-aos-delay={index * 50}
-                  >
-                    <Image
-                      src={data._src}
-                      alt={data._alt}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      style={{ width: "100%", height: 70 }}
-                    />
-                  </a>
-                );
-              })}
+            <div className="others">
+              <h2>Others</h2>
+              <div>
+                {SkillList["Others"].map((data, index) => {
+                  return (
+                    <a
+                      key={index}
+                      target="_blank"
+                      href={data._href}
+                      data-aos="zoom-out-right"
+                      data-aos-delay={index * 50}
+                    >
+                      <Image
+                        src={data._src}
+                        alt={data._alt}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: 70 }}
+                      />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* end my skill */}
       {/* start portfolio */}
-      <section
-        className="portfolio"
-        data-aos="fade-up-right"
-        data-aos-delay={100}
-      >
-        <h1>Portfolio</h1>
-        <div className="wrapper">
+      <section className="portfolio">
+        <div data-aos="fade-up-right" data-aos-delay={100}>
+          <h1>Portfolio</h1>
+          <div className="wrapper">
           <div className="folio">
             <div className="col-desc" data-aos="fade-left">
               <a href="https://ignica.com" target="_blank" className="title">
@@ -312,53 +190,53 @@ export default function Home() {
         <div className="see-more">
           <SeeMoreButton />
         </div>
+        </div>
       </section>
       {/* end portfolio */}
       {/* start work experience */}
-      <section
-        className="work-experience"
-        data-aos="fade-up"
-        data-aos-delay={100}
-      >
-        <h1>Work Experience</h1>
-        <div className="wrapper">
-          <div>
-            <h2>
-              Frontend Developer, PT Boston Makmur Gemilang (Sep 2021 - Sep
-              2023)
-            </h2>
-            <ul>
-              <li>
-                Implementing the web user interface in accordance with the
-                provided UI design.
-              </li>
-              <li>Integrating the interface with the backend using APIs.</li>
-              <li>
-                Identifying and resolving bugs or errors that arise in the web
-                application.
-              </li>
-              <li>
-                Enhancing the performance of the web application, including
-                source code optimization.
-              </li>
-              <li>
-                Collaborating with the development team and engaging in regular
-                discussions regarding client requirements and requests, as well
-                as identifying appropriate technical solutions.
-              </li>
-              <li>
-                Engaging in discussions with the development team regarding the
-                selection of programming languages, frameworks, and libraries to
-                be used in the project, while also adhering to consistent code
-                styling practices in web development.
-              </li>
-            </ul>
+      <section className="work-experience">
+        <div data-aos="fade-up" data-aos-delay={100}> 
+          <h1>Work Experience</h1>
+          <div className="wrapper">
+            <div>
+              <h2>
+                Frontend Developer, PT Boston Makmur Gemilang (Sep 2021 - Sep
+                2023)
+              </h2>
+              <ul>
+                <li>
+                  Implementing the web user interface in accordance with the
+                  provided UI design.
+                </li>
+                <li>Integrating the interface with the backend using APIs.</li>
+                <li>
+                  Identifying and resolving bugs or errors that arise in the web
+                  application.
+                </li>
+                <li>
+                  Enhancing the performance of the web application, including
+                  source code optimization.
+                </li>
+                <li>
+                  Collaborating with the development team and engaging in regular
+                  discussions regarding client requirements and requests, as well
+                  as identifying appropriate technical solutions.
+                </li>
+                <li>
+                  Engaging in discussions with the development team regarding the
+                  selection of programming languages, frameworks, and libraries to
+                  be used in the project, while also adhering to consistent code
+                  styling practices in web development.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <section className="education" data-aos="fade-up" data-aos-delay={100}>
-        <h1>Education</h1>
-        <div className="wrapper">
+      <section className="education">
+        <div data-aos="fade-up" data-aos-delay={100}>
+          <h1>Education</h1>
+          <div className="wrapper">
           <div className="edu-wrap">
             <h2>
               Full Stack Developer, Bootcamp Fazztrack (Mei 2021 – Agu 2021)
@@ -394,6 +272,7 @@ export default function Home() {
                 Akhlak, Al-Quran Hadits and Sejarah Kebudayaan Islam, etc.
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </section>
